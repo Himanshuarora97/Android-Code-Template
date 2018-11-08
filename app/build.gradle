@@ -3,9 +3,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
-
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
+    kapt {
+        mapDiagnosticLocations = true
+    }
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.sourcedev.codetemplate"
         minSdkVersion 21
@@ -27,6 +33,7 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
+    kapt 'com.android.databinding:compiler:3.1.3'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
