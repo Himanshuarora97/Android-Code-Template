@@ -26,6 +26,36 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "default"
+
+    productFlavors {
+
+        finalProduction {
+            dimension "default"
+            applicationId "com.sourcedev.codetemplate"
+            resValue "string", "app_name", "CT"
+        }
+
+        demoProduction {
+            dimension "default"
+            applicationId "com.sourcedev.codetemplate.demoproduction"
+            resValue "string", "app_name", "CT demo P"
+        }
+
+        demoTesting {
+            dimension "default"
+            applicationId "com.sourcedev.codetemplate.demotesting"
+            resValue "string", "app_name", "CT demo T"
+        }
+
+
+        mock {
+            dimension "default"
+            applicationId "com.sourcedev.codetemplate.mock"
+            resValue "string", "app_name", "CT Mock"
+        }
+    }
 }
 
 dependencies {
